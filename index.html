@@ -17,6 +17,9 @@
 </head>
 
 <body>
+
+	<div class="loader-wrapper"><img src="img/icons/config-anim-green.gif" alt="" class="loader"></div>
+
 	<header>
 		<nav>
 			<div class="nav-fixedWidth">
@@ -24,7 +27,7 @@
 					<div class="logo">
 						<a href="index.html"><img src="img/YurolEnergy-Logo.png" class="logo-img" alt="logo"></a>
 					</div>
-					<div class="make-order"><a href="#">Замовити</a></div>
+					<div class="make-order"><a href="#config">Замовити</a></div>
 					<div class="trigger">
 						<span></span>
 						<span></span>
@@ -46,7 +49,6 @@
 		</nav>
 
 	</header>
-	<!-- <div class="container"></div> -->
 	<main>
 		
 		<section class="about-section">
@@ -65,26 +67,15 @@
 					Таким чином котел продовжує обігрівати вашу оселю навіть коли не споживає електроенергію.</p>
 				<img src="img/vertical-empty-img.png" alt="Boiler Image" class="description-img">
 			</div>
+			<span id="config"></span>
 		</section>
-
-		<section class="config" id="config">
+		
+		<section class="config">
 			<h1 class="title1 config-title1">Обрати котел <img src="img/icons/config-anim-green.gif" alt="config-gif" width="50"></h1>
 			<div class="config-grid">
 				<div class="config-img"></div>
 				<div class="config-props">
 					<form name="boiler-properties">
-						<!-- <label class="property-label" for="power">Потужність котла:</label>
-						<input type="range" name="power" id="powerInput" value="3" step="5" min="10" max="100"
-							oninput="powerOutput.value = powerInput.value">
-						<output name="boilerPower" id="powerOutput">10 </output><span class="units"> кВт</span>
-						<br><br>
-
-						<label class="property-label" for="square">Площа обігріву:</label>
-						<input type="range" name="square" id="squareInput" value="100" step="10" min="30" max="300"
-							oninput="squareOutput.value = squareInput.value">
-						<output name="boilerSquare" id="squareOutput">100 </output><span class="units"> м<sup>2</sup></span>
-						<br><br> -->
-
 						<label class="property-label" for="power">Потужність котла:</label>
 						<select class="property-select" name="power"  id="powerSelect">
 							<option value="1" selected>3</option>

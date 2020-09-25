@@ -22,6 +22,22 @@ a{
   text-decoration: none;
 }
 
+.loader-wrapper{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f1f1f1;
+  z-index: 1000;
+}
+.loader{
+  width: 70px;
+}
+
 /* Scrollbar styling */
 /* width */
 ::-webkit-scrollbar {
@@ -50,7 +66,7 @@ header{
   position: fixed;
   width: 100%;
   box-shadow: 0px -1px 13px 4px rgba(0,0,0,0.3);
-  z-index: 10000;
+  z-index: 100;
 }
 header nav {
   height: auto;
@@ -100,7 +116,7 @@ header nav {
   position: absolute;
   height: 6px;
   width: 100%;
-  background: #d3531a;
+  background: #01870E;
   border-radius: 9px;
   opacity: 1;
   left: 0;
@@ -185,9 +201,9 @@ header nav {
   background: linear-gradient(156deg, rgba(0,116,12,1) 0%, rgba(1,126,7,1) 39%, rgba(1,135,14,1) 100%);
   position: absolute;
 }
-.nav-fixedWidth .green-rect{
+.green-rect{
   z-index: 2;
-  right: -160px;
+  right: -186px;
   top: -80px;
   transform: rotateZ(-45deg);
 }
@@ -200,6 +216,7 @@ header nav {
 }
 .main-nav a{
   width: 100%;
+  border-radius: 5px;
   font-size: 14px;
   padding: 20px 14px;
   color: #000;
@@ -456,6 +473,7 @@ main{
   transition: 0.8s;
   border: 1px solid rgb(0,116,12);
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .order:hover{
@@ -523,6 +541,7 @@ main{
 }
 .approve-order{
   border: none;
+  border-radius: 5px;
   background: rgb(0,116,12);
   background: linear-gradient(90deg, rgba(0,116,12,1) 0%, rgba(1,126,7,1) 39%, rgba(1,135,18,1) 100%);
   color: #f1f2f6;
@@ -628,7 +647,7 @@ input[type=range]::-webkit-slider-runnable-track {
 	letter-spacing: 1px;
 	margin: 0 auto;
 	margin-left: 5px;
-	margin-right: 5px;
+	margin-right: 15px;
 	margin-bottom: 10px;
 	text-align: center;
 	border-radius: 4px;
@@ -672,8 +691,18 @@ input[type=range]::-webkit-slider-runnable-track {
 .automatic-img{
   width: 100%;
   margin-bottom: 12px;
+  border-radius: 4px;
 }
-
+.automatic-label p{
+  font-size: 16px;
+  text-align: center;
+}
+.automatic-label h4{
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center; 
+  margin-top: 16px;
+}
 
 
 /* 
