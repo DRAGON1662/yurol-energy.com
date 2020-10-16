@@ -1,16 +1,61 @@
 $(window).on("load", function () {
 	$(".loader-wrapper").fadeOut("slow");
+	let	currLoc = $(location).attr('href'); 
+
+	// if (window.location.pathname == "/index.html") {
+  //   if(currLoc == 'https://yurol-energy.com/index#home' || currLoc == 'https://yurol-energy.com/index#config' || currLoc == 'https://yurol-energy.com/index#contacts' || currLoc == 'https://yurol-energy.com/#home' || currLoc == 'https://yurol-energy.com/#config' || currLoc == 'https://yurol-energy.com/#contacts'){
+	// 		$(location).attr('href', 'https://yurol-energy.com/')
+	// 	}
+	// }
+	
+	// setTimeout(function(){
+	// 	if(currLoc == 'https://yurol-energy.com/index#home' || currLoc == 'https://yurol-energy.com/index#config' || currLoc == 'https://yurol-energy.com/index#contacts' || currLoc == 'https://yurol-energy.com/#home' || currLoc == 'https://yurol-energy.com/#config' || currLoc == 'https://yurol-energy.com/#contacts'){
+	// 		$(location).attr('href', 'https://yurol-energy.com/')
+	// 	}
+	// }, 2000)
 })
 
 
 $(document).ready(function(){
+
+	let dollar = 28.28;
+
+
+
+
 	// top Menu
-	$(".trigger").click(function() {
-		$(this).toggleClass('open');
-	    $(".main-nav").toggleClass("show");	   
+	$(".trigger, .main-nav li").click(function() {
+		$(".trigger").toggleClass('open');
+	  $(".main-nav").toggleClass("show");	   
 	});
 
-	
+	// send form
+	$('form').on("submit", function () {
+		let powerText = $('#powerSelect :selected').html();
+		let squareText = powerText;
+		let boiler_config = $('.main-order .configuration').text();
+		let boiler_price = $('.main-order > .price-config').text()
+
+		$('.main-order').append("<input type='hidden' name='boiler_config' value=' " + boiler_config + " '/>");
+		$('.main-order').append("<input type='hidden' name='boiler_price' value=' " + boiler_price + " '/>");
+		$(this).append("<input type='hidden' name='power' value=' " + powerText + " '/>");
+		$(this).append("<input type='hidden' name='square' value=' " + squareText + " '/>");
+		$('.thank-you-modal__wrapper').removeClass('show-modal').addClass('show-modal');
+		$('.thank-you-modal__wrapper').on("click", function(){
+			location.reload();
+		})
+	});
+
+	//close all
+	$('.accordion').click(function(){
+		$('.panel').slideToggle();
+	})
+	$('.close-panel').click(function(){
+		$('.panel').slideUp();
+	})
+	$('.thank-you-modal i, .thank-you-modal, .thank-you-modal__wrapper').click(function(){
+		$('.thank-you-modal__wrapper').hide();
+	})
 
 	// select range for configurator
 	let selection = $(".property-select");
@@ -25,6 +70,7 @@ $(document).ready(function(){
 			powerSelect.prop("selectedIndex", powerSelectedIndex);
 		});
 	}
+	
 	function connect_select_to_power() {
 		let squareSelectedIndex = squareSelect.prop("selectedIndex");
 		powerSelect.on("change", function(){
@@ -34,114 +80,76 @@ $(document).ready(function(){
 		});
 	}
 
+
 	let configuration = $(".configuration");
-	let home = "Home";
+	// let home = "Home";
 	let pro = "Pro";
 	let maxi = "Maxi";
 	let configPrice = $(".price-config");
 	let orderPrice = $(".price-order");
-	let newPrice = 16000;
-
-	let automatic = $(".automatic-label");
-	let automaticName = $(".automatic-name");
+	let configImg = $(".config-img");
+	let newPrice = 1100 * dollar;
 
 	let smoothStart = $(".smooth-start-checkbox");
 
 	function change_price() {
 		// basic options
-		configuration.text(home);
+		configuration.text(pro);
 		configPrice.text(newPrice);
 		orderPrice.text(newPrice); 
 
-		selection.on("change", function () {
-			if (parseInt(powerSelect.val()) == 1){
-				configuration.text(home);
-				configPrice.text(newPrice); 			
-				orderPrice.text(newPrice); 
+		$('.automatics-input, .property-select').on("change", function () {
+			if(parseInt(powerSelect.val()) >= 1 && parseInt(powerSelect.val()) <= 4){
+				configPrice.text(newPrice); 	
+				orderPrice.text(newPrice);
+				// if(parseInt(powerSelect.val()) >= 1 && parseInt(powerSelect.val()) <= 2){
+				// 	configuration.text(home);
+				// 	if($("input:radio[name=automatics]:checked").val() == "Комфорт"){
+				// 		configPrice.text(newPrice + Math.floor(130 * dollar)); 	
+				// 		orderPrice.text(newPrice + Math.floor(130 * dollar));
+				// 	}
+				// 	else if($("input:radio[name=automatics]:checked").val() == "Економ"){
+				// 		configPrice.text(newPrice);
+				// 		orderPrice.text(newPrice);
+				// 	}
+				// }
+				if (parseInt(powerSelect.val()) >= 1 && parseInt(powerSelect.val()) <= 4){
+					configuration.text(pro);
+					if($("input:radio[name=automatics]:checked").val() == "Комфорт"){
+						configPrice.text(newPrice + Math.floor(130 * dollar)); 	
+						orderPrice.text(newPrice + Math.floor(130 * dollar));
+						configImg.css('background-image', 'url(img/automatics/boiler-comfort.jpg)')
+					}
+					else if($("input:radio[name=automatics]:checked").val() == "Економ"){
+						configPrice.text(newPrice);
+						orderPrice.text(newPrice);
+						configImg.css('background-image', 'url(img/automatics/boiler-econom.jpg)')
+					}
+				}
 			}
-			else if (parseInt(powerSelect.val()) == 2){
-				configuration.text(home);
-				configPrice.text(newPrice + 1000); 	
-				orderPrice.text(newPrice + 1000); 		
-			}
-			else if (parseInt(powerSelect.val()) == 3){
-				configuration.text(pro);
-				configPrice.text(newPrice + 2000); 	
-				orderPrice.text(newPrice + 2000); 		
-			}
-			else if (parseInt(powerSelect.val()) == 4){
-				configuration.text(pro);
-				configPrice.text(newPrice + 3000); 		
-				orderPrice.text(newPrice + 3000); 	
-			}
-			else if (parseInt(powerSelect.val()) == 5){
-				configuration.text(pro);
-				configPrice.text(newPrice + 4000); 			
-				orderPrice.text(newPrice + 4000); 
-			}
-			else if (parseInt(powerSelect.val()) == 6){
-				configuration.text(pro);
-				configPrice.text(newPrice + 5000); 			
-				orderPrice.text(newPrice + 5000); 
-			}
-			else if (parseInt(powerSelect.val()) == 7){
+			else if(parseInt(powerSelect.val()) >= 5){
 				configuration.text(maxi);
-				configPrice.text(newPrice + 6000); 			
-				orderPrice.text(newPrice + 6000); 
-			}
-			else if (parseInt(powerSelect.val()) == 8){
-				configuration.text(maxi);
-				configPrice.text(newPrice + 7000); 			
-				orderPrice.text(newPrice + 7000); 
-			}
-			else if (parseInt(powerSelect.val()) == 9){
-				configuration.text(maxi);
-				configPrice.text(newPrice + 8000); 			
-				orderPrice.text(newPrice + 8000); 		}
-			else if (parseInt(powerSelect.val()) == 10){
-				configuration.text(maxi);
-				configPrice.text(newPrice + 9000); 			
-				orderPrice.text(newPrice + 9000); 
-			}
-			else if (parseInt(powerSelect.val()) == 11){
-				configuration.text(maxi);
-				configPrice.text(newPrice + 10000); 			
-				orderPrice.text(newPrice + 10000); 
+				configPrice.text(newPrice + Math.floor(75 * dollar)); 			
+				orderPrice.text(newPrice + Math.floor(75 * dollar));
+				if($("input:radio[name=automatics]:checked").val() == "Комфорт"){
+					configPrice.text(newPrice + Math.floor(130 * dollar) + Math.floor(75 * dollar)); 	
+					orderPrice.text(newPrice + Math.floor(130 * dollar) + Math.floor(75 * dollar));
+					configImg.css('background-image', 'url(img/automatics/boiler-comfort.jpg)')
+				}
+				else if($("input:radio[name=automatics]:checked").val() == "Економ"){
+					configPrice.text(newPrice + Math.floor(75 * dollar));
+					orderPrice.text(newPrice + Math.floor(75 * dollar));
+					configImg.css('background-image', 'url(img/automatics/boiler-econom.jpg)')
+				}
 			}
 		});
-
-		automatic.on("change", function(){
-			console.log(automaticName.is(':checked').text());
-		})
-
-		// smoothStart.on("change", function (){
-		// 	if ($(this).is(':checked')) {
-				
-		// 	} else {
-		// 		configPrice.text(newPrice); 	
-		// 	}
-		// });
 	}
-	
-	
-	
-
 	connect_power_to_select();
 	connect_select_to_power();
 	change_price();
 	
-	
-
-	
-
-	$('.accordion').click(function(){
-		$('.panel').slideToggle();
-	})
-	$('.close-panel').click(function(){
-		$('.panel').slideUp();
-	})
-	
-
-
+	if (window.location.pathname == "/pages/shop.html") {
+    $("#shop-accordion").accordion();
+	}
 	
 });

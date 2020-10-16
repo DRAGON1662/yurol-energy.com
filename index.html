@@ -39,16 +39,24 @@
 				<ul class="main-nav">
 					<li><a href="#home">Головна</a></li>
 					<li><a href="#config">Конфігуратор</a></li>
-					<li><a href="pages/">Магазин</a></li>
-					<li><a href="pages/">Автоматика</a></li>
-					<li><a href="#pdf">Каталог</a></li>
+					<li><a href="pages/sorry.html">Магазин</a></li>
+					<li><a href="pages/sorry.html">Автоматика</a></li>
+					<li><a href="pages/sorry.html">Каталог</a></li>
 					<li><a href="#contacts">Контакти</a></li>
 					<li><a href="#config">Замовити</a></li>
 				</ul>
+				<!-- <div class="lang-menu">
+					<div class="current-lang"><img src="img/icons/ukraine.png" alt="Ukraine lang" class="lang-img"></div>
+					<ul class="select-lang">
+						<li><a href="lang/"><img src="img/icons/ukraine.png" alt="Ukraine lang" class="lang-img"></a></li>
+						<li><a href="lang/"><img src="img/icons/united-kingdom.png" alt="English lang" class="lang-img"></a></li>
+					</ul>
+				</div> -->
 			</div>
 		</nav>
 
 	</header>
+	<div id="home"></div>
 	<main>
 		
 		<section class="about-section">
@@ -58,130 +66,154 @@
 			<div class="about-par-img">
 				<img src="img/YurolEn-logo-green.png" alt="Yurol Energy Logo" class="about-img">
 				<p class="about-par"> Ми, Yurol Energy™ - український виробник електричних котлів опалення. На ринку з 2012 року.  
-				Під час газової кризи 2012 року невелика група інженерів та ентузіастів зі Львова поставила перед собою мету розробити економний і водночас недорогий котел та налагодити повний цикл його  виробництва в Україні. Протягом восьми років ми вдосконалювались та розвивали кожен аспект нашого продукту, щоб зараз представити вам  наші нові індукційні котли.</p>
+				<br> Під час газової кризи 2012 року невелика група інженерів та ентузіастів зі Львова поставила перед собою мету розробити економний і водночас недорогий котел та налагодити повний цикл його  виробництва в Україні. Протягом восьми років ми вдосконалювались та розвивали кожен аспект нашого продукту, щоб зараз представити вам  наші нові індукційні котли.</p>
+				<img src="img/YurolEn-present.jpg" alt="Yurol Energy Logo" class="about-img-mobile">
 			</div>
 			<h1 class="title1 description-title"><span>Опис продукту</span></h1>
 			<div class="description-par-img">
 				<p class="description-par"> Наші котли обладнані нагрівальними елементами власного виробництва, що використовують технологію електромагнітної індукції. Це дозволяє досягати більшої ефективності в порівнянні зі звичайними електричними котлами.
-					Також у наших котлах ми використовуємо принцип інерційності. Наш котел періодично вмикає та вимикає нагрівальний елемент. Під час фази ввімкнення температура робочої області нагрівального елемента сягає 200℃. Натомість під час фази вимкнення нагрівальний елемент продовжує віддавати тепло доки температура робочої області не досягне 100℃.
-					Таким чином котел продовжує обігрівати вашу оселю навіть коли не споживає електроенергію.</p>
-				<img src="img/vertical-empty-img.png" alt="Boiler Image" class="description-img">
+				<br>  Також у наших котлах діє принцип інерційності. Котел періодично вмикає та вимикає нагрівальний елемент. Під час фази ввімкнення температура робочої області нагрівального елемента сягає 200℃. Натомість під час фази вимкнення нагрівальний елемент продовжує віддавати тепло доки температура робочої області не досягне 100℃.
+				Таким чином котел продовжує обігрівати вашу оселю навіть коли не споживає електроенергію.</p>
+				<img src="img/automatics/boiler-econom.jpg" alt="Boiler Image" class="description-img">
 			</div>
 			<span id="config"></span>
 		</section>
-		
+	<form>
 		<section class="config">
 			<h1 class="title1 config-title1">Обрати котел <img src="img/icons/config-anim-green.gif" alt="config-gif" width="50"></h1>
+			
 			<div class="config-grid">
 				<div class="config-img"></div>
-				<div class="config-props">
-					<form name="boiler-properties">
-						<label class="property-label" for="power">Потужність котла:</label>
-						<select class="property-select" name="power"  id="powerSelect">
-							<option value="1" selected>3</option>
-							<option value="2">5</option>
-							<option value="3">8</option>
-							<option value="4">10</option>
-							<option value="5">12</option>
-							<option value="6">15</option>
-							<option value="7">18</option>
-							<option value="8">21</option>
-							<option value="9">24</option>
-							<option value="10">28</option>
-							<option value="11">30</option>
-						</select>
-						<span class="units">кВт</span>
-						<br><br>
-
-						<label class="property-label" for="square">Площа обігріву:</label>
-						<select class="property-select" name="square" id="squareSelect">
-							<option value="1" selected>30</option>
-							<option value="2">50</option>
-							<option value="3">80</option>
-							<option value="4">100</option>
-							<option value="5">120</option>
-							<option value="6">150</option>
-							<option value="7">180</option>
-							<option value="8">210</option>
-							<option value="9">240</option>
-							<option value="10">280</option>
-							<option value="11">300</option>
-						</select>
-						<span class="units">м<sup>2</sup></span>
-						<br><br>
-						<!-- Automatic -->
-						<label class="property-label" for="power">Автоматика:</label>
-						<br><br>
-						<input class="automatic-input" type="radio" name="automatic" id="auto-1" checked>
-						<label class="for-automatic-input" for="auto-1">
-							<img class="automatic-img" src="img/horizontal-empty-img.png" alt="">
-							<h4 class="automatic-name">"Мішка"</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, non nisi minima pariatur atque corporis quo molestias suscipit.</p>
-						</label>
-						<input class="automatic-input" type="radio" name="automatic" id="auto-2">
-						<label class="for-automatic-input" for="auto-2">
-							<img class="automatic-img" src="img/horizontal-empty-img.png" alt="">
-							<h4 class="automatic-name">"Бульдог"</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, non nisi minima pariatur atque corporis quo molestias suscipit.</p>
-						</label>
-						<br><br>
-						<!-- Smooth start system -->
-						<label class="property-label smooth-start-label">
-							Система плавного пуску:
-							<input class="smooth-start-checkbox" type="checkbox">
-							<span class="tick"></span>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, non nisi minima pariatur atque
-								corporis quo molestias suscipit facere numquam.</p>
-						</label>
-					</form>
-				</div>
-				<div class="config-price-order">
-					<span class="config-quotes">&#171;<span class="configuration">Home</span>&#187;</span> <br>
-					<span class="price price-config">16000</span><span class="currency"> грн.</span>
+				<div class="config-price-order main-order">
+					<span class="config-quotes">Модель &#171;<span class="configuration"></span>&#187;</span> <br>
+					<span class="price price-config"></span><span class="currency"> грн.</span>
 					<br>
 					<button class="order accordion">Замовити</button>
 				</div>
+				<div class="config-props">
+					<div name="boiler-properties">
+						<label class="property-label" for="powerSelect">Потужність котла:</label>
+						<select class="property-select" id="powerSelect">
+							<!-- <option value="1">3</option> -->
+							<!-- <option value="2">5</option> -->
+							<option value="1">8</option>
+							<option value="2">10</option>
+							<option value="3">12</option>
+							<option value="4">15</option>
+							<option value="5">18</option>
+							<option value="6">21</option>
+							<option value="7">24</option>
+							<option value="8">28</option>
+							<option value="9">30</option>
+						</select>
+						<input id="power_text" type="hidden" name="power_text" value="" />
+						<span class="units">кВт</span>
+						<br><br>
+
+						<label class="property-label" for="squareSelect">Площа обігріву:</label>
+						<select class="property-select" id="squareSelect">
+							<!-- <option value="1">30</option> -->
+							<!-- <option value="2">50</option> -->
+							<option value="1">80</option>
+							<option value="2">100</option>
+							<option value="3">120</option>
+							<option value="4">150</option>
+							<option value="5">180</option>
+							<option value="6">210</option>
+							<option value="7">240</option>
+							<option value="8">280</option>
+							<option value="9">300</option>
+						</select>
+						<span class="units">м<sup>2</sup></span>
+						<br><br>
+						<!-- automatics -->
+						<label class="property-label" for="power">Автоматика:</label>
+						<br><br>
+						<div class="automatics__wrapper">
+							<input class="automatics-input" type="radio" value="Економ" name="automatics" id="econom" checked>
+							<label class="for-automatics-input" for="econom">
+								<img class="automatics-img" src="img/automatics/econom.jpg" alt="">
+								<h4 class="automatics-name">"Econom"</h4>
+								<ul>
+									<li>- аналогове управління</li>
+									<li>- регулювання температури </li>
+									<li>- можливість підключення кімнатного термостата</li>
+									<li>- керування циркуляційним насосом</li>
+								</ul>
+							</label>
+							<input class="automatics-input" type="radio" value="Комфорт" name="automatics" id="comfort">
+							<label class="for-automatics-input" for="comfort">
+								<img class="automatics-img" src="img/automatics/comfort.jpg" alt="">
+								<h4 class="automatics-name">"Comfort"</h4>
+								<ul>
+									<li>- цифрове управління</li>
+									<li>- регулювання температури  </li>
+									<li>- можливість підключення кімнатного термостата</li>
+									<li>- керування циркуляційним насосом</li>
+									<li>- добовий таймер </li>
+									<li>- можливість підключення бойлера дотичного нагріву</li>
+								</ul>
+							</label>
+						</div>
+						<br><br>
+						<!-- Smooth start system -->
+						<!-- <label class="property-label smooth-start-label">
+							Система плавного пуску:
+							<input class="smooth-start-checkbox" name="smooth_start" type="checkbox">
+							<span class="tick"></span>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, non nisi minima pariatur atque
+								corporis quo molestias suscipit facere numquam.</p>
+						</label> -->
+					</div> <!-- .boiler-properties -->
+				</div>
+				
 			</div>
 		</section>
-
 
 		<div class="order-container panel">
 			<h2 class="title2">Щоб замовити котел заповніть форму</h2>
 			<i class="fa fa-times close-panel" aria-hidden="true"></i>
 			<div class="order-form-img">
-				<form class="order-form" action="">
+				<div class="order-form">
 					<label class="order-label" for="name">Ваше ім'я:</label><br>
-					<input class="order-input" type="text" id="name" name="name" placeholder="Як до вас звертатись"><br>
+					<input class="order-input" type="text" id="name" name="user_name" placeholder="Як до вас звертатись" required onkeypress="return /[а-яіїё, a-z]/i.test(event.key)"><br>
 					<label class="order-label" for="tel">Телефон:</label><br>
-					<input class="order-input" type="tel" id="tel" name="user_phone" placeholder="+38 (068)-000-00-00"><br>
+					<input class="order-input" type="tel" id="tel" name="user_phone" placeholder="+38 (068)-000-00-00" required><br>
 					<label class="order-label" for="gmail">Ваш E-mail:</label><br>
-					<input class="order-input" type="email" id="gmail" name="gmail" placeholder="Ваш E-mail"><br>
-					<label class="order-label" for="adress">Адреса:</label><br>
-					<input class="order-input" type="text" id="adress" name="adress" placeholder="Львів, вул. Мазепи, 1А"><br>
+					<input class="order-input" type="email" id="gmail" name="user_email" placeholder="Ваш E-mail" required><br>
+					<label class="order-label" for="adress">Ваш населений пункт:</label><br>
+					<input class="order-input" type="text" id="adress" name="user_adress" placeholder="Львів" onkeypress="return /[а-яіїё, a-z]/i.test(event.key)" required><br>
+					<label class="order-label" for="nposhta">Найближче відділення нової пошти:</label><br>
+					<input class="order-input" type="text" id="nposhta" name="user_nposhta" placeholder="45" onkeypress="return /[0-9]/i.test(event.key)" required><br>
 					<label class="order-label" for="user_message">Ваше питання:</label><br>
 					<textarea class="order-input" style="min-height:164px" id="user_message" name="user_message"
 						placeholder="Ваше питання"></textarea><br><br>
-					<button class="approve-order">Підтвердити</button>
-				</form>
+					<button type="submit" name="submit" class="approve-order">Підтвердити</button>
+				</div>
 				<div class="config">
 					<div class="config-img"></div>
 					<div class="config-price-order">
-						<span class="config-quotes">&#171;<span class="configuration"></span>&#187;</span> <br>
+						<span class="config-quotes">Модель &#171;<span class="configuration"></span>&#187;</span> <br>
 						<span class="price price-order"></span><span class="currency"> грн.</span>
 					</div>
 				</div>
 			</div>
 		</div>
+			</div>
+
+	</form>
+				
 
 
-		<section class="contacts">
+		<section class="contacts" id="contacts">
 			<div class="contacts-info">
-				<h2 class="title2">Контакти</h2>
+				<h2 class="title1">Контакти</h2>
 				<div class="contacts-map-par-wrapper">
 					<p class="contacts-par">
-						<b>Адреса: </b>Lorem ipsum dolor sit amet, consectetur. <br>
-						<b>Телефон:</b> +38 (068) 000-00-00 <br>
-						<b>Email:</b> example@gmail.com
+						<b>Адреса: </b>Львівська&nbsp;обл., м.&nbsp;Львів, вул.&nbsp;Городницька <br>
+						<b>Телефон:</b> +38&nbsp;(093)&nbsp;850-92-18 <br>
+						<b>Технічні питання:</b> +38&nbsp;(067)&nbsp;939-66-94 <br>
+						<b>Email:</b> yurol73@gmail.com
 					</p>
 					<div class="contacts-map">
 						<div style="width: 100%"><iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0"
@@ -196,23 +228,30 @@
 
 	<footer>
 		<div class="top-side-footer">
-			<p class="footer-p1">© 2020 - ТзОВ "Yurol Energy"</p>
+			<p class="footer-p1">© 2020 - ФОП Оленич Юрій Романович</p>
 			<ul class="footer-ul">
 				<li class="footer-list-item"><a href="#home" class="footer-active">Головна</a></li>
 				<li class="footer-list-item"><a href="#config">Конфігуратор</a></li>
 				<li class="footer-list-item"><a href="#pdf">Каталог</a></li>
 				<li class="footer-list-item"><a href="#contacts">Контакти</a></li>
 				<br>
-				<li class="footer-list-item"><a href="pages/">Магазин</a></li>
-				<li class="footer-list-item"><a href="pages/">Автоматика</a></li>
+				<li class="footer-list-item"><a href="pages/shop.html">Магазин</a></li>
+				<li class="footer-list-item"><a href="pages/automatics.html">Автоматика</a></li>
 			</ul>
 			<p class="footer-p2">YUROL ENERGY</p>
 		</div>
 		<div class="bottom-side-footer">
-			<div class="footer-p">Lorem ipsum dolor sit amet consectetur adipisicing.</div>
+			<div class="footer-p">Львівська&nbsp;обл., м.&nbsp;Львів, вул.&nbsp;Городницька</div>
 		</div>
 	</footer>
-
+	
+	<div class="thank-you-modal__wrapper">
+		<div class="thank-you-modal">
+			<i class="fa fa-times" aria-hidden="true"></i>
+			<h3>Дякуємо за Ваше замовлення</h3>
+			<p>Ваша заявка опрацьовується! <br>Ми з Вами зв'яжемось найближчим часом.</p>
+		</div>
+	</div>
 
 	<!-- Scripts -->
 	<script src="js/script.js"></script>
@@ -220,6 +259,30 @@
 	<script>
 		$(document).ready(function(){
 			$("#tel").mask("+38 (999) 999-99-99");
+
+			//E-mail Ajax Send
+			$("form").submit(function(e) { // Событие отправки с формы
+				e.preventDefault();
+	      var form_data = $(this).serialize(); // Собираем данные из полей
+	      $.ajax({
+	        type: "POST", // Метод отправки
+					url: "mail.php", // Путь к PHP обработчику sendform.php
+					async: false,
+	        data: form_data,
+	        // success: function(data) {
+					// 	if(success){
+					// 		alert("Ваша заявка прийнята і обробляється!");
+					// 		// $(".thank-you-modal__wrapper").addClass("show-modal");
+					// 		// setTimeout(function(){
+					// 		// 	location.reload();
+					// 		// }, 3000)
+					// 	}
+					// }
+					
+	      });
+    		
+	    });
+			
 		})
 	</script>
 </body>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Настройка форм: отправляем заявки с сайта на почту без перезагрузки страницы (AJAX)</title>
+	<link rel="stylesheet" type="text/css" href="test.css">
+	<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> -->
+	<!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+  <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+	<form>
+		<input type="text" name="name" placeholder="Введите Ваше имя">
+		<input type="tel" name="tel" placeholder="Введите Ваш номер">
+		<input type="email" name="email" placeholder="Введите Вашу почту">
+		<input type="submit" name="submit" value="Отправить заявку">
+	</form>
+
+	<div class="popup">
+	    <div class="thanks">
+	    <a class="close"></a> <!-- При клике происходит закрытие всплывающего окна -->
+	        <h2 class="popup__title">Спасибо за заявку!</h2>
+	        <p>В ближайшее время с Вами свяжется наш специалист</p>
+	    </div>
+	    <div class="overlay"></div> <!-- Затемнение фона. При клике закрываем всплывающее окно -->
+	</div>
+	<br><br><br><br>
+	<div id="accordion">
+		<h3>Section 1</h3>
+		<div>
+			<p>
+			Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+			ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+			amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+			odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+			</p>
+		</div>
+		<h3>Section 2</h3>
+		<div>
+			<p>
+			Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+			purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+			velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+			suscipit faucibus urna.
+			</p>
+		</div>
+		<h3>Section 3</h3>
+		<div>
+			<p>
+			Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+			Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+			ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+			lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+			</p>
+			<ul>
+				<li>List item one</li>
+				<li>List item two</li>
+				<li>List item three</li>
+			</ul>
+		</div>
+		<h3>Section 4</h3>
+		<div>
+			<p>
+			Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+			et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+			faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+			mauris vel est.
+			</p>
+			<p>
+			Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+			Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+			inceptos himenaeos.
+			</p>
+		</div>
+	</div>
+
+
+
+	<select id="mySelect">
+    <option value="1">Yes</option>
+    <option value="2">No</option>
+	</select>
+	<input type="button" id="demo" value = "Demo" />
+
+
+	<p id="home">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum delectus velit ipsum tempora, sed quisquam iusto aliquam quis vitae animi, veritatis debitis maiores. Voluptatum unde ad officia eos fugit consequatur sunt dicta facilis, dolor cum dolores illo, id odio provident omnis, ullam hic perferendis placeat accusamus quas! Architecto quo placeat facilis totam repellat? Dolorum sed accusantium illo? Mollitia repellendus itaque distinctio a rerum, placeat unde dolorum tenetur quasi error iusto earum voluptatem tempore cupiditate doloribus pariatur consequuntur quibusdam harum, consequatur eligendi assumenda dolores odio eveniet! Voluptate eveniet adipisci perspiciatis reiciendis. Unde in facilis obcaecati corrupti corporis possimus odio provident dolore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam culpa earum cum consequuntur, adipisci numquam ullam pariatur neque. A nobis suscipit quo labore. Impedit, molestiae doloribus voluptatem corporis quisquam voluptatibus repellendus eum cumque magnam, ipsum ut veniam consequuntur perferendis natus dolore omnis itaque provident nam, ipsam laboriosam molestias tempora debitis. Maiores sunt adipisci explicabo tenetur, saepe reprehenderit eum eligendi et ipsum aspernatur quasi voluptas cumque fuga unde magni tempore eos voluptate quibusdam dolorum porro reiciendis suscipit. Nisi maiores mollitia fugiat commodi, voluptatibus iste aliquam magni illo enim et distinctio modi dolorum dolorem ad praesentium laborum doloribus. Illo mollitia quasi voluptatem? Temporibus rerum, aperiam in eligendi aliquam vel distinctio officiis vero quaerat tenetur? Laudantium cum ex at facere accusantium inventore doloribus cumque temporibus? Incidunt fuga accusantium doloremque. Earum sed voluptas aspernatur amet fugit distinctio sunt ex consequatur iure voluptatibus dolorem qui, voluptatem, rem nihil quis! Ut, harum odio reprehenderit cupiditate magnam nemo sapiente suscipit ullam facilis dolor necessitatibus explicabo deleniti aliquam neque. Debitis velit repellendus, quibusdam quaerat rerum blanditiis explicabo illo maxime quae sequi molestias commodi perferendis dolore quam? Voluptas animi sint facilis temporibus optio eos molestiae, libero nemo perferendis fugiat officiis dicta vel consequuntur repellat, unde provident! Optio, ea error. Rem sapiente incidunt fugit, quasi atque eius suscipit quisquam sint, alias delectus nisi soluta nobis illo temporibus dolorem ea beatae consectetur. Officia quod ea vero, repellat quo amet? Earum inventore cum unde natus quo! Aut, in eaque? Dolore, at! Quidem magni ratione adipisci doloremque cumque. Rem numquam, obcaecati fuga ab perspiciatis voluptate officia velit vero earum omnis in ea odio hic mollitia deserunt, molestiae quidem beatae? Magni omnis excepturi unde dolores, tempora doloribus recusandae dolorum cum voluptas fugit tenetur consequatur atque id officiis rerum minima dicta! Eius alias aperiam commodi atque ut, nulla voluptas ipsum ipsam unde similique omnis deleniti obcaecati reiciendis, beatae qui, distinctio suscipit vitae doloremque exercitationem repellendus. Porro impedit inventore voluptatem? Molestias dolore exercitationem provident voluptate tenetur cupiditate iure sunt vitae, modi, ut voluptatibus quasi. Ut magni architecto hic molestiae dolorum rem saepe tempora. Perspiciatis, provident dolor! Consectetur dolorum repellat alias, ipsum deserunt pariatur minima eveniet molestias adipisci, cum ut quae hic. Aliquid odio quia omnis cupiditate qui maiores nobis non! Eaque sint odio velit quasi iste explicabo, quam, assumenda aperiam, repellendus expedita aliquid quae similique quisquam unde eum! Facilis culpa, quidem officia ad esse, excepturi itaque et odio quo perspiciatis, facere dolores necessitatibus dolore nemo beatae similique voluptas vel! Ratione laudantium fugiat quae, maiores iusto quaerat explicabo dolores exercitationem nobis rerum ullam iure quasi atque, numquam error perferendis unde dicta quia enim suscipit aliquam quidem. Reprehenderit, suscipit quo dolores fuga illo qui. Dolores velit eius temporibus voluptatibus voluptate impedit eligendi, ipsum nostrum laudantium debitis nam! Magnam molestias distinctio tenetur quibusdam quam asperiores ab ipsum, exercitationem cumque ea soluta natus laborum magni nihil expedita reiciendis ratione. Perferendis quas saepe ex totam mollitia natus consequatur minus laborum ut inventore, expedita optio blanditiis alias est molestias nam vel. Quos voluptas minima dignissimos in commodi quo eveniet velit enim suscipit ratione excepturi repudiandae aut modi, porro vel debitis assumenda, error perspiciatis deleniti, laboriosam tempora atque perferendis quas. Recusandae eaque eveniet ratione maiores eum vel blanditiis error porro, officiis quibusdam excepturi impedit. Qui, vitae repellat. Vero ab, officia fuga quasi, aperiam accusantium et itaque cum dolore eligendi quisquam aut rem eaque porro ratione placeat illo mollitia similique, dignissimos voluptas iusto quis nisi minus dolorem? Maiores, natus molestias recusandae similique assumenda perferendis beatae in eaque dolore repudiandae voluptatibus, repellendus autem quo! Saepe, doloribus numquam architecto quasi ullam neque earum perspiciatis? Quaerat eum, minima magni adipisci doloremque repellendus dignissimos dolores labore recusandae vero nesciunt facere culpa nobis quam sunt ipsa. Reprehenderit voluptate illum pariatur, maiores eos qui, cum iure molestiae numquam laboriosam earum id deserunt officia magnam minima. Saepe magni architecto a animi ut voluptatibus adipisci rerum! Ea perferendis eaque voluptatum obcaecati quidem unde laudantium voluptates animi nihil! Voluptatibus modi odit accusamus dicta ab aperiam repellendus suscipit voluptas quibusdam obcaecati assumenda vel natus tenetur ad a eum labore deserunt quod quaerat dolor, fuga fugit amet. Deleniti inventore praesentium perferendis rerum dolorum itaque vel totam atque doloribus veniam quas tempora animi sapiente dolor, earum rem sequi minima fuga aspernatur eveniet labore asperiores autem? Non nisi at, fugiat modi consequuntur velit nesciunt eligendi? Doloremque veniam cumque labore voluptatum aliquid qui ducimus. Suscipit esse sed distinctio assumenda nihil et exercitationem fugit debitis? Sunt error velit sit dolores ab earum illum, eveniet aliquam vitae sequi quis voluptas, autem laboriosam recusandae, pariatur possimus. Dolores exercitationem necessitatibus nemo hic cum in amet nulla deleniti? Amet necessitatibus voluptate quia laborum omnis iure est, pariatur non sint alias libero perspiciatis at, id ea voluptas quam natus enim minus molestiae quibusdam dignissimos temporibus! Rerum vel dicta ut optio perspiciatis obcaecati aspernatur dolores, aut maiores tenetur fuga saepe atque ab possimus laborum culpa? Tenetur soluta ea atque, eius earum itaque dolore ipsum nulla aperiam dolor explicabo ipsam eveniet officia expedita, nostrum repellendus. Nisi delectus reprehenderit culpa perferendis alias officiis ea consectetur fugit. Hic harum modi similique voluptatibus delectus ad quod consequuntur, expedita dignissimos quo repellendus voluptate facilis corporis numquam iusto fuga ex voluptatum, beatae vel ratione quaerat aliquid sequi? Amet enim ipsa ratione culpa voluptatem fuga, at temporibus, id laboriosam pariatur a aperiam quod? Ratione rem, eveniet quaerat ut impedit maxime modi repellendus. Vel esse mollitia autem quam ducimus quia? Eos quo corrupti ea labore reiciendis distinctio impedit in magni nam qui doloremque atque voluptates, expedita saepe dolorem ducimus repellendus nisi explicabo quod porro. Fugit, quam provident? Sapiente in corporis repellat fugiat illum commodi enim, ut doloribus aliquam voluptatibus ad voluptates et deleniti sunt obcaecati optio quasi tempora quam? Quasi tempore beatae nulla dignissimos eius eum reiciendis hic suscipit ipsa sint! Nostrum in quae sint adipisci. Error, vitae, nulla asperiores tenetur aliquid hic iste officiis magnam, ipsam commodi libero dolores! Rerum commodi doloremque est esse veniam ratione facere reiciendis debitis. Corporis, quod totam dolores, officiis nemo eius ducimus exercitationem ea temporibus quis necessitatibus veniam quos velit? Harum tempora reprehenderit nemo inventore et repudiandae?</p>
+	<br>
+	<button href="#home" id="someID">Check</button>
+
+
+	<script type="text/javascript">
+			$("#demo").on("click", function () {
+					//Get text or inner html of the selected option
+					var selectedText = $("#mySelect option:selected").html();
+					alert(selectedText);
+			});
+	</script>
+	 
+
+
+	<script>
+	    $(document).ready(function(){
+					$( function() {
+						$( "#accordion" ).accordion();
+					} );
+	        $("form").submit(function() { // Событие отправки с формы
+	                var form_data = $(this).serialize(); // Собираем данные из полей
+	                $.ajax({
+	                type: "POST", // Метод отправки
+	                url: "test.php", // Путь к PHP обработчику sendform.php
+	                data: form_data,
+	                success: function() {
+	                    $('.popup').addClass('active');
+	                    $('.thanks').addClass('active');
+        				}
+	                });
+    			event.preventDefault();
+	        });
+	    });
+	</script>
+	
+</body>
+</html>
